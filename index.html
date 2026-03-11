@@ -1,34 +1,91 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="fr">
 <head>
-<title>My Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon site</title>
 
-<style>
-header {
-  background-color: yellow;
-  padding: 40px;
-  text-align: center;
-}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
 
-header h1 {
-  color: black;
-  margin: 0;
-}
-</style>
+    header {
+      background-color: yellow;
+      padding: 30px;
+      text-align: center;
+    }
 
+    header h1 {
+      color: black;
+      margin: 0;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      background-color: #222;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .tab-button:hover {
+      background-color: #444;
+    }
+
+    .tab-button.active {
+      background-color: yellow;
+      color: black;
+      font-weight: bold;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 30px;
+      background-color: white;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<h1>My Website</h1>
-</header>
+  <header>
+    <h1>Mon site</h1>
+  </header>
 
-<p>Welcome to my website.</p>
+  <div class="tabs">
+    <button class="tab-button active" onclick="openTab('introduction', this)">Introduction</button>
+    <button class="tab-button" onclick="openTab('details', this)">Détails</button>
+    <button class="tab-button" onclick="openTab('illustration', this)">Illustration</button>
+    <button class="tab-button" onclick="openTab('infos', this)">Infos</button>
+  </div>
 
-</body>
+  <div id="introduction" class="tab-content active">
+    <h2>Introduction</h2>
+    <p>Bienvenue sur mon site. Ceci est l’onglet introduction.</p>
+  </div>
 
-</html>
-
+  <div id="details" class="tab-content
 
