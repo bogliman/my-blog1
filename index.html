@@ -1,154 +1,168 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon site</title>
+<meta charset="UTF-8">
+<title>Sous-marin nucléaire</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
+<style>
 
-    header {
-      background-color: yellow;
-      padding: 30px;
-      text-align: center;
-    }
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
 
-    header h1 {
-      color: black;
-      margin: 0;
-    }
+header{
+background:yellow;
+padding:30px;
+text-align:center;
+}
 
-    .tabs {
-      display: flex;
-      justify-content: center;
-      background-color: #222;
-      flex-wrap: wrap;
-    }
+header h1{
+color:black;
+margin:0;
+}
 
-    .tab-button {
-      background-color: #222;
-      color: white;
-      border: none;
-      padding: 15px 20px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+.tabs{
+display:flex;
+justify-content:center;
+background:#222;
+}
 
-    .tab-button:hover {
-      background-color: #444;
-    }
+.tab-button{
+background:#222;
+color:white;
+border:none;
+padding:15px 25px;
+cursor:pointer;
+font-size:16px;
+}
 
-    .tab-button.active {
-      background-color: yellow;
-      color: black;
-      font-weight: bold;
-    }
+.tab-button:hover{
+background:#444;
+}
 
-    .tab-content {
-      display: none;
-      padding: 30px;
-      background-color: white;
-      max-width: 1000px;
-      margin: 20px auto;
-      border-radius: 8px;
-      box-sizing: border-box;
-    }
+.tab-button.active{
+background:yellow;
+color:black;
+font-weight:bold;
+}
 
-    .tab-content.active {
-      display: block;
-    }
+.tab-content{
+display:none;
+padding:30px;
+background:white;
+max-width:900px;
+margin:20px auto;
+border-radius:10px;
+}
 
-    .viewer-box {
-      width: 100%;
-      height: 600px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid #ddd;
-      background: #e9eef2;
-    }
+.tab-content.active{
+display:block;
+}
 
-    .viewer-box iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+.viewer{
+width:100%;
+height:500px;
+border-radius:10px;
+overflow:hidden;
+}
 
-    p {
-      line-height: 1.5;
-    }
-  </style>
+</style>
+
 </head>
+
 <body>
 
-  <header>
-    <h1>Mon site</h1>
-  </header>
+<header>
+<h1>Sous-marins nucléaires</h1>
+</header>
 
-  <div class="tabs">
-    <button class="tab-button active" onclick="openTab('introduction', this)">Introduction</button>
-    <button class="tab-button" onclick="openTab('details', this)">Détails</button>
-    <button class="tab-button" onclick="openTab('illustration', this)">Illustration</button>
-    <button class="tab-button" onclick="openTab('infos', this)">Infos</button>
-  </div>
+<div class="tabs">
 
-  <div id="introduction" class="tab-content active">
-    <h2>Introduction</h2>
-    <p>Bienvenue sur mon site.</p>
-  </div>
+<button class="tab-button active" onclick="openTab('intro',this)">
+Introduction
+</button>
 
-  <div id="details" class="tab-content">
-    <h2>Détails</h2>
-    <p>Ici, tu peux écrire les détails de ton site.</p>
-  </div>
+<button class="tab-button" onclick="openTab('details',this)">
+Détails
+</button>
 
-  <div id="illustration" class="tab-content">
-    <h2>Illustration</h2>
-    <p>Ci-dessous, tu peux regarder un modèle 3D de sous-marin et le faire tourner avec la souris.</p>
+<button class="tab-button" onclick="openTab('illustration',this)">
+Illustration
+</button>
 
-    <div class="viewer-box">
-      <iframe
-        title="Sous-marin 3D"
-        frameborder="0"
-        allowfullscreen
-        mozallowfullscreen="true"
-        webkitallowfullscreen="true"
-        allow="autoplay; fullscreen; xr-spatial-tracking"
-        xr-spatial-tracking
-        execution-while-out-of-viewport
-        execution-while-not-rendered
-        web-share
-        src="https://sketchfab.com/models/f1645a6ec3b54e81aed7b2c105cdd6e2/embed?autostart=1&ui_infos=0&ui_controls=1&ui_stop=0">
-      </iframe>
-    </div>
-  </div>
+<button class="tab-button" onclick="openTab('infos',this)">
+Infos
+</button>
 
-  <div id="infos" class="tab-content">
-    <h2>Infos</h2>
-    <p>Ici, tu peux mettre des informations supplémentaires.</p>
-  </div>
+</div>
 
-  <script>
-    function openTab(tabId, button) {
-      let contents = document.querySelectorAll('.tab-content');
-      let buttons = document.querySelectorAll('.tab-button');
 
-      contents.forEach(function(content) {
-        content.classList.remove('active');
-      });
+<div id="intro" class="tab-content active">
+<h2>Introduction</h2>
+<p>Ce site présente un sous-marin nucléaire et son fonctionnement.</p>
+</div>
 
-      buttons.forEach(function(btn) {
-        btn.classList.remove('active');
-      });
 
-      document.getElementById(tabId).classList.add('active');
-      button.classList.add('active');
-    }
-  </script>
+<div id="details" class="tab-content">
+<h2>Détails</h2>
+<p>Les sous-marins nucléaires utilisent un réacteur nucléaire pour produire de l'énergie.</p>
+</div>
+
+
+<div id="illustration" class="tab-content">
+
+<h2>Illustration 3D</h2>
+
+<p>Tu peux tourner le sous-marin avec ta souris.</p>
+
+<div class="viewer">
+
+<iframe
+title="Submarine"
+frameborder="0"
+allowfullscreen
+allow="autoplay; fullscreen"
+src="https://sketchfab.com/models/08fe3a8efd3342e9bf55629ea8afcf14/embed"
+width="100%"
+height="100%">
+</iframe>
+
+</div>
+
+</div>
+
+
+<div id="infos" class="tab-content">
+<h2>Infos</h2>
+<p>Les sous-marins nucléaires peuvent rester sous l'eau pendant plusieurs mois.</p>
+</div>
+
+
+<script>
+
+function openTab(tabId,button){
+
+let contents=document.querySelectorAll(".tab-content");
+let buttons=document.querySelectorAll(".tab-button");
+
+contents.forEach(function(c){
+c.classList.remove("active");
+});
+
+buttons.forEach(function(b){
+b.classList.remove("active");
+});
+
+document.getElementById(tabId).classList.add("active");
+button.classList.add("active");
+
+}
+
+</script>
 
 </body>
 </html>
+
