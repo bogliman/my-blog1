@@ -72,6 +72,83 @@
       background: #e9eef2;
     }
 
-    .viewer-box if
+    .viewer-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
+    p {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
 
+  <header>
+    <h1>Mon site</h1>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="openTab('introduction', this)">Introduction</button>
+    <button class="tab-button" onclick="openTab('details', this)">Détails</button>
+    <button class="tab-button" onclick="openTab('illustration', this)">Illustration</button>
+    <button class="tab-button" onclick="openTab('infos', this)">Infos</button>
+  </div>
+
+  <div id="introduction" class="tab-content active">
+    <h2>Introduction</h2>
+    <p>Bienvenue sur mon site.</p>
+  </div>
+
+  <div id="details" class="tab-content">
+    <h2>Détails</h2>
+    <p>Ici, tu peux écrire les détails de ton site.</p>
+  </div>
+
+  <div id="illustration" class="tab-content">
+    <h2>Illustration</h2>
+    <p>Ci-dessous, tu peux regarder un modèle 3D de sous-marin et le faire tourner avec la souris.</p>
+
+    <div class="viewer-box">
+      <iframe
+        title="Sous-marin 3D"
+        frameborder="0"
+        allowfullscreen
+        mozallowfullscreen="true"
+        webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        xr-spatial-tracking
+        execution-while-out-of-viewport
+        execution-while-not-rendered
+        web-share
+        src="https://sketchfab.com/models/f1645a6ec3b54e81aed7b2c105cdd6e2/embed?autostart=1&ui_infos=0&ui_controls=1&ui_stop=0">
+      </iframe>
+    </div>
+  </div>
+
+  <div id="infos" class="tab-content">
+    <h2>Infos</h2>
+    <p>Ici, tu peux mettre des informations supplémentaires.</p>
+  </div>
+
+  <script>
+    function openTab(tabId, button) {
+      let contents = document.querySelectorAll('.tab-content');
+      let buttons = document.querySelectorAll('.tab-button');
+
+      contents.forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      buttons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      document.getElementById(tabId).classList.add('active');
+      button.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
